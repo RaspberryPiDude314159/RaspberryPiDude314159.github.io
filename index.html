@@ -1,5 +1,13 @@
 <!DOCTYPE html>
-<html> <head>
+<html> <head><style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 6px solid blue;
+}
+</style>
 <style>
 .button {
   background-color: #4CAF50; /* Green */
@@ -26,12 +34,17 @@
 }
 </style>
 <style>
+.center {
+  margin: auto;
+  width: 50%;
+  border: 0px solid green;
+  padding: 10px;
+}
+</style>
+<style>
 button {
   border: 1px solid black;
   margin-top: 40px;
-  margin-bottom: 40px;
-  margin-right: auto;
-  margin-left: auto;
   background-color: lightblue;
 }
 </style>
@@ -44,7 +57,9 @@ body {
   <script>confirm("Warning: This HTML site is a Work In Progress. Are you sure you want to continue?")</script> 
 <h2 style="text-align: center;"><span>Welcome to my website!</span></h2>
 <h2 style="text-align: center;"><span>This site is almost completely made wth HTML, with a little Cascading Style Sheets and Javascript.</span></h2>
-  <button class="button button1"position="fixed"><strong color="blue">Sitemap</strong></button>
+ <div class="center">
+   <button class="button button1 right"position="fixed"><strong color="blue">Sitemap</strong></button></div>
 <h2 style="text-align: center;"><span >A quick note: As it is currently in development and testing,&nbsp;don't&nbsp;expect&nbsp;miracles.&nbsp;</span></h2>
 <h2 style="text-align: center;"><span>Yet.</span></h2>
+
  </body></html>
