@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html> <head> <style>
-.button { display: inline-block; border-radius: 4px; background-color: #f4511e; border: none; color: #FFFFFF; text-align: center; font-size: 28px; padding: 20px; width: 200px; transition: all 0.5s; cursor: pointer; margin: auto;
-}.button span {
-  cursor: pointer;
-  display: inline-block;
+.container {
+  height: 200px;
   position: relative;
-  transition: 0.5s;
+  border: 3px solid green;
 }
 
-.button span:after {
-  content: '\00bb';
+.center {
+  margin: 0;
   position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+</style>
 
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-</style><style>
+<div class="container">
+  <div class="center">
+    <button>Centered Button</button>
+  </div>
+</div><style>
 body {
   background-image: linear-gradient(to right, rgba(0,0,255,1), rgba(0,172,255,0.8));
 }
@@ -36,7 +31,7 @@ body {
 <h2 style="text-align: center;"><span>This site is almost completely made wth HTML, with a little Cascading Style Sheets and Javascript.</span></h2>
 <p>&nbsp;</p>
 <h2>&nbsp;</h2>
-<button class="button" style="vertical-align:middle"><span>Sitemap </span></button>
+
 <h2>&nbsp;</h2>
 <h2>&nbsp;</h2>
 <h2>&nbsp;</h2>
