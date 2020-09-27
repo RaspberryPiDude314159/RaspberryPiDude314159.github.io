@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<html> <head><script>confirm("Warning: This HTML site is a Work In Progress. Are you sure you want to continue?")</script><link rel="stylesheet" type="text/css" href="https://raspberrypidude314159.github.io/css/topnav.css" /><div class="topnav">
-  <a class="active" href="https://raspberrypidude314159.github.io">Home</a>
-  <a href="https://raspberrypidude314159.github.io/html/coolstuff.html">Cool Stuff</a>
-  <a href="https://raspberrypidude314159.github.io/html/contact.html">Contact</a>
-  <a href="https://raspberrypidude314159.github.io/html">HTML</a>
-<a href="https://raspberrypidude314159.github.io/js">JS</a>
-<a href="https://raspberrypidude314159.github.io/css">CSS</a></div><hr><style>
+<html> <head><script src="https://raspberrypidude314159.github.io/js/menu.js"></script><link rel="stylesheet" href="https://raspberrypidude314159.github.io/css/menu.css"><script>confirm("Warning: This HTML site is a Work In Progress. Are you sure you want to continue?")</script><style>
 .center {
   display: flex;
   justify-content: center;
@@ -54,17 +48,23 @@ button {
   background-color: lightblue;
 }
 </style>
+  <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
 <style>
 body {
   background-image: linear-gradient(to right, rgba(0,0,255,1), rgba(0,172,255,0.8));
 }
 </style><title>Adam's website</title></head> <body> <style> .marquee { color:#0011ff; font-size: 25px; font-weight: bold; font-family: sans-serif; } } } </style> <style> .blink { animation: blinker 1s linear infinite; color: #ff0800; font-size: 18px; font-weight: bold; font-family: sans-serif; } @keyframes blinker { 50% { opacity: 0; } } </style> <marquee class="marquee" direction="left">Adam's Website - Work in Progress! </marquee>
-  <hr> <p class="blink" style="text-align: center;">Work in progress, enter if you dare.</p> 
-  <script>confirm("Warning: This HTML site is a Work In Progress. Are you sure you want to continue?")</script> 
+  <hr> <p class="blink" style="text-align: center;">Work in progress, enter if you dare.</p>  
 <h2 style="text-align: center;"><span>Welcome to my website!</span></h2>
 <h2 style="text-align: center;"><span>This site is almost completely made wth HTML, with a little Cascading Style Sheets and Javascript.</span></h2>
- <div class="center">
-   <button class="button button1 right"position="fixed"onclick=window.open("https://raspberrypidude314159.github.io/html/coolstuff")><strong color="blue">Cool Stuff</strong></button></div>
+ <div id="main"><div class="center">
+   <button class="button button1 right openbtn"position="fixed"onclick=openNav()><strong color="blue">&#9776; Open Menu</strong></button></div></div>
 <h2 style="text-align: center;"><span >A quick note: As it is currently in development and testing,&nbsp;don't&nbsp;expect&nbsp;miracles.&nbsp;</span></h2>
 <h2 style="text-align: center;"><span>Yet.</span></h2>
 
