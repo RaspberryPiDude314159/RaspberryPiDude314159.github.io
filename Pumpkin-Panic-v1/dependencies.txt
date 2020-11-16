@@ -1,0 +1,12 @@
+com.unity.ext.nunit@1.0.0
+com.unity.editorcoroutines@1.0.0
+com.unity.ide.rider@1.1.4
+com.unity.settings-manager@1.0.2
+com.unity.test-framework@1.1.14
+com.unity.textmeshpro@2.0.1
+com.unity.timeline@1.2.15
+com.unity.collab-proxy@1.2.16
+com.unity.ugui@1.0.0
+com.unity.ide.vscode@1.2.1
+com.unity.connect.share@2.1.0
+Game Jam Game@0.1
