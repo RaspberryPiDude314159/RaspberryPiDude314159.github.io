@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 
@@ -93,8 +94,8 @@ span.psw {
   }
 }
 </style>
-  </head>
-<body>
+</head>
+<body onload="checkCookie()">
 
 <h2>Modal Login Form</h2>
 
@@ -114,7 +115,7 @@ span.psw {
 
      
         
-      <button type="submit" value="Send">Continue</button>
+      <button onclick = "setCookie("username", user, 30)"type="submit" value="Send">Continue</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -130,11 +131,19 @@ span.psw {
 <script>
 // Get the modal
 
+var modal = document.getElementById('id01');
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
+  for(var i = 0; i < ca.length; i++) {
     var c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -146,15 +155,20 @@ function getCookie(cname) {
   return "";
 }
 
-var ifemail = getCookie("ifemail")
-var modal = document.getElementById('id01');
-if (ifemail = "yes"){
-modal.style.display = "none";
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    modal.style.display = "none";
+  } else {
+     modal.style.display = "block";
+     user = "entered"
+     if (user != "" && user != null) {
+       setCookie("username", user, 30)
+     }
+  }
 }
-else{
-modal.style.display = "block";
-document.cookie = "ifemail = yes";
-}
+
 </script>
+
 </body>
 </html>
