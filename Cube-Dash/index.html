@@ -1,10 +1,103 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Cube Dash v1</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <title>Unity WebGL Player | Game Jam Game</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
@@ -12,15 +105,88 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Cube Dash.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <body>
+  <body onload="checkCookie()">
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="https://formspree.io/f/maylpyjw" method="POST">
+    <div class="imgcontainer">
+      
+      
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Please enter email to continue :)</b></label><br>
+      <input type="email" placeholder="Enter Email" type="email" name="_replyto" required>
+
+     
+        
+      <button onclick = "setCookie("username", user, 30)"type="submit" value="Send">Continue</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me<br><br><br><br><br>
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+
+      
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+
+var modal = document.getElementById('id01');
+function setCookie(cname,cvalue,exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var user=getCookie("username");
+  if (user != "") {
+    modal.style.display = "none";
+  } else {
+     modal.style.display = "block";
+     user = "entered"
+     if (user != "" && user != null) {
+       setCookie("username", user, 30)
+     }
+  }
+}
+
+</script>
+
+
     <div id="sfcfys422tmwy1lbu72f658uqtk15j88kds"></div><script type="text/javascript" src="https://counter3.stat.ovh/private/counter.js?c=fys422tmwy1lbu72f658uqtk15j88kds&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter3.stat.ovh/private/freecounterstat.php?c=fys422tmwy1lbu72f658uqtk15j88kds" border="0" title="hit counter" alt="hit counter"></a></noscript>
     <div class="webgl-content">
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">Cube Dash</div>
+        <div class="title">Game Jam Game</div>
       </div>
     </div>
   </body>
 </html>
+
